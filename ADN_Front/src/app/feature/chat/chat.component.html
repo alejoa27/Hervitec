@@ -1,0 +1,66 @@
+<div class="cont">
+	<div class="row no-gutters">
+		<div class="col-md-4 border-right">
+			<div class="settings-tray button-menu">
+				<span class="settings-tray--right">
+					<i class="material-icons">cached</i>
+					<i class="material-icons">message</i>
+					<i class="material-icons">menu</i>
+				</span>
+			</div>
+			<tr *ngFor="let chat of chats">
+				<div class="friend-drawer friend-drawer--onhover" (click)="chatClick(chat)">
+					<th class="th-icon">
+						<img [src]="getIcono(chat)" alt="">
+					</th>
+					<div class="text">
+						<h6>{{chat.nombre}}</h6>
+						<p class="text-muted">{{chat.date}}</p>
+					</div>
+					<span class="time text-muted small">🔘</span>
+				</div>
+
+			</tr>
+			<hr>
+		</div>
+		<div class="col-md-8">
+			<div class="settings-tray">
+				<div class="friend-drawer no-gutters friend-drawer--grey">
+					<th class="th-icon">
+						<img [src]="getIconoProfile()" alt="">
+					</th>
+					<div class="text">
+						<h6>{{username}}</h6>
+						<p class="text-muted">En linea</p>
+					</div>
+					<span class="settings-tray--right">
+						<i class="material-icons">cached</i>
+						<i class="material-icons">message</i>
+						<i class="material-icons">menu</i>
+					</span>
+				</div>
+			</div>
+			<div class="chat-panel">
+				<div class="row no-gutters" *ngFor="let message of messages">
+					<div class="col-md-6">
+						<div class="chat-bubble chat-bubble--left">
+							{{message.value}}
+						</div>
+					</div>
+				</div>
+				<form class="form" [formGroup]="chatForm">
+					<div class="row">
+						<div class="col-12">
+							<div class="chat-box-tray">
+								<input formControlName="value" type="text" placeholder="Type your message here...">
+								<button type="button" class="form__submit" value='Registrarse' (click)="sendMessage()">
+									<i class="material-icons">send</i>
+								</button>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

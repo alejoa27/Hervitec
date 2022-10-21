@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "hervitecchat-5d44e": {
+      "hosting": {
+        "app-base": [
+          "hervitecchat-5d44e"
+        ]
+      }
+    }
+  }
+}

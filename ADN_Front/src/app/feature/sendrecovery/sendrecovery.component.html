@@ -1,0 +1,15 @@
+<div class="cont">
+    <form class="form" [formGroup] = "emailForm">
+        <h2 class="form_tittle">Recuperar contraseña</h2>
+        <p class="form_paragraph">Ingrese su correo para recuperar su contraseña</p>
+
+        <div class="form__container">
+            <div class="form__group">
+                <input type="text" name="email" id="email" class="form__input" placeholder=" " formControlName="email">
+                <label for="user" class="form__label"> Correo:</label>
+                <span class="form__line"></span>
+            </div>
+            <input type="button" class="form__submit" value='Enviar' (click) = "runSendEmail()">
+        </div>
+    </form>
+</div>

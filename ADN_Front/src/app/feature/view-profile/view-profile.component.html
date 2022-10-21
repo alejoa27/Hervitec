@@ -1,0 +1,134 @@
+<div class="background">
+    <div class="cont">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-4 mt-1">
+                    <div class="card text-center sidebar">
+                        <div class="card-body">
+                            <img src="../../../assets/img/profile.jpg" class="rounded-circle" width="150">
+                            <div class="mt-3">
+                                <h3>{{ username }}</h3>
+                                <a href="#">Inicio</a>
+                                <a href="/gestorservicios">Mis servicios</a>
+                                <a href="#">Ofertas</a>
+                                <a href="#">Ayuda</a>
+                                <a href="#">Configuracion</a>
+                                
+                                  
+                                <a href="#">Salir</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8 mt-1">
+                    <div class="card mb-3 content">
+                        <h1 class="m-3 pt-3">Perfil</h1>
+                        <div class="card-body">
+                            <hr>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <h5>Nombre completo</h5>
+                                </div>
+                                <div class="col-md-9 text-secondary">
+                                   {{datosUsuario.nombre +" "+datosUsuario.apellido}}
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <h5>Correo</h5>
+                                </div>
+                                <div class="col-md-9 text-secondary">
+                                    {{datosUsuario.email}}
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <h5>Telefono</h5>
+                                </div>
+                                <div class="col-md-9 text-secondary">
+                                    {{datosUsuario.cel}}
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <h5>Direccion</h5>
+                                </div>
+                                <div class="col-md-9 text-secondary">
+                                    {{datosUsuario.ciudad}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card mb-3 content">
+                        <h1 class="m-3">Historial</h1>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <h5>Nombre del proyecto</h5>
+                                </div>
+                                <div class="col-md-9 text-secondary">
+                                    Descripcion del proyecto
+                                </div>
+                            </div>
+                        </div>
+
+                        <ng-template *ngIf="tipoUsuario == 1; then updateUserButton"></ng-template>
+
+                        <ng-template #updateUserButton>
+                            <button class="btn btn-lg btn-primary" (click)="open(content)">Valídate como prestador de servicios</button>
+                        </ng-template>
+                        
+                        <!-- Aqui hay que crear un modal -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<ng-template #content let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Actualizar perfil</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <form [formGroup]="actualizarPerfilForm">
+        <div class="form-group">
+          <label for="dateOfBirth">Cedula</label>
+          <div class="input-group">
+            <input id="cedula" class="form-control" formControlName="cc">
+            <div class="input-group-append">
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+            <label for="dateOfBirth">Celular</label>
+            <div class="input-group">
+              <input id="celular" class="form-control" formControlName="cel">
+              <div class="input-group-append">
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="dateOfBirth">Fecha de nacimiento</label>
+            <div class="input-group">
+              <input id="fecha_nacimiento" class="form-control" placeholder="yyyy-mm-dd" name="dp" ngbDatepicker #dp="ngbDatepicker" [(ngModel)]="fechaObject" formControlName="fechaN" (dateSelect) = "onSelect($event)">
+              <div class="input-group-append">
+                <button class="btn btn-outline-secondary calendar" (click)="dp.toggle()" type="button"></button>
+              </div>
+            </div>
+          </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-primary" (click)="modal.close('save')">Guardar</button>
+    </div>
+  </ng-template>
+  
+  
+  <hr>

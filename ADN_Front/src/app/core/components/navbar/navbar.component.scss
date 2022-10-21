@@ -1,0 +1,41 @@
+
+.navbar{
+    border-radius: 50px;
+}
+.search{
+    height: 40px;
+    width: 100%;
+    border-radius: 60px;
+    outline: none;
+    margin-right: -35px;
+    font-family: 'Rubik', sans-serif;
+    border: 2px solid rgb(248, 26, 92);
+}
+
+.btn{
+    height: 40px;
+    width: 20%;
+    outline: none;
+    border: none;
+    background: rgb(248, 26, 92);
+    color: white;
+    border-radius: 60px;
+    font-weight: 700;
+}
+
+
+.log{
+    height: 40px;
+    width: 70%;
+    outline: none;
+    border: none;
+    border-radius: 60px;
+    background: rgb(29, 160, 61);
+    margin-left: 1%;
+}
+.navbar-light .navbar-brand {
+    color: rgb(168 24 67);
+}
+.icon{
+    width: 25px;
+}

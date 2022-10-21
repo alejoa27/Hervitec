@@ -1,0 +1,71 @@
+<div class="container">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <h1 class="navbar-brand" href="#"> <b>HERVITEC</b> </h1>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav col-10">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/home">Inicio</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Servicios
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="/gestorservicios">Mis servicios</a></li>
+              <li><a class="dropdown-item" href="#">Nuevos</a></li>
+              <li><a class="dropdown-item" href="#">Mas Buscados</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="#">Populares</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Categorias
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item"  *ngFor="let categoria of categorias" href="/filter-service?nombre=&categoria={{categoria.id}}">{{categoria.nombre}}</a></li>
+            </ul>
+          </li>
+            
+          
+            <form class="d-flex col-8 form-search" (ngSubmit)="filterByName($event)">
+              <input class="form-control me-2 search" type="search" placeholder="..." aria-label="Search" name="nameFilter" [(ngModel)]="nameFilter">
+              <button class="btn btn-outline-success" type="submit">Buscar</button>    
+          </form>
+        </ul>
+        <ul class="navbar-nav col-3 align-self-end">
+
+          <form class="d-flex">
+          
+            <a href="/viewprofile" class="btn btn-outline-success log" type="submit">
+              <img
+                src="https://img.icons8.com/external-kiranshastry-lineal-kiranshastry/2x/external-user-interface-kiranshastry-lineal-kiranshastry-1.png"
+                alt="" class="icon"></a>
+            
+            <ng-template *ngIf="sesionActiva == true;then logOutButton"></ng-template>
+  
+            <ng-template #logOutButton>
+              <a (click)="logOut()" class="btn btn-outline-success log" type="submit">
+                <img
+                  src="https://img.icons8.com/ios/50/000000/exit.png"
+                  alt="" class="icon"></a>
+            </ng-template>
+            
+  
+          </form>
+
+        </ul>
+        
+      </div>
+    </div>
+  </nav>
+</div>

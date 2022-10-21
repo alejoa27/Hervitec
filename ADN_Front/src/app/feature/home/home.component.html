@@ -1,0 +1,120 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap" rel="stylesheet">
+<div class="cont">
+    <section class="main">
+        <div class="container py-5">
+            <div class="row py-5">
+                <div class="col-lg-7 pt-5 text-center">
+                    <h2 class="pt-5">¿Que servicios estás buscando?</h2>
+                    <form class="d-flex search_box" (ngSubmit)="filterByName($event)">
+                        <input class="form-control me-2 search" type="search" placeholder="..." aria-label="Search" name="nameFilter" [(ngModel)]="nameFilter">
+                        <button class="btn btn-outline-success" type="submit">Buscar</button>    
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container p-3">
+        <form class="d-flex">
+            <a class="btn btn-outline-success" href="/agregarservicio">
+                <img src="https://img.icons8.com/ios-filled/2x/service.png" alt="" class="icon"> Publicar anuncio </a>
+            <a class="btn btn-outline-success" href="/gestorservicios">Mis anuncios</a>
+            <button class="btn2 btn-outline-success" type="submit">Favoritos</button>
+            <button class="btn2 btn-outline-success" type="submit">Destacar anuncios</button>
+        </form>
+    </div>
+
+    <div class="col-lg-8 m-auto text-center">
+        <h1>Tecnología</h1>
+    </div>
+    <app-carusel></app-carusel>
+    <div class="col-lg-8 m-auto text-center">
+        <h1>Educación</h1>
+    </div>
+    <app-carusel></app-carusel>
+    <div class="col-lg-8 m-auto text-center">
+        <h1>Arte</h1>
+    </div>
+    <app-carusel></app-carusel>
+    <!-- ########################################################-->
+
+    <section class="new">
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-lg-30 m-auto">
+                    <div class="row text-center">
+                        <div class="col-lg-4">
+                            <img src="../../../assets/img/retos-ideas-innovacion (23).png" class="img-fluid" alt="">
+                            <h6>OFRECE</h6>
+                        </div>
+                        <div class="col-lg-4">
+                            <img src="../../../assets/img/innovacion.png" class="img-fluid" alt="">
+                            <h6>CREA</h6>
+                        </div>
+                        <div class="col-lg-4">
+                            <img src="../../../assets/img/innovacion-rt.png" class="img-fluid" alt="">
+                            <h6>AVANZA</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about">
+        <div class="container py-5">
+            <div class="row py-5">
+                <div class="col-lg-8 m-auto text-center">
+                    <h1>Encuentra la solución a tu problema</h1>
+                    <h6 style="color: red;">Servicios de alta calidad a tu mano</h6>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4">
+                    <img src="../../../assets/img/RELOJ.jpg" class="img-fluid mb-3" alt="">
+                    <h5>Cuando lo necesites</h5>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias pariatur quaerat debitis
+                        mollitia, commodi voluptates magni esse consectetur fuga dolore.
+                        Consequuntur eaque aut debitis voluptatibus qui magnam recusandae repudiandae earum!</p>
+                </div>
+                <div class="col-lg-4">
+                    <img src="../../../assets/img/Nuevo-Currículo.jpg" class="img-fluid mb-3" alt="">
+                    <h5>Donde lo necesites</h5>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias pariatur quaerat debitis
+                        mollitia, commodi voluptates magni esse consectetur fuga dolore.
+                        Consequuntur eaque aut debitis voluptatibus qui magnam recusandae repudiandae earum!</p>
+                </div>
+                <div class="col-lg-4">
+                    <img src="../../../assets/img/buyer-persona-main.jpg" class="img-fluid mb-3" alt="">
+                    <h5>Como lo necesites</h5>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias pariatur quaerat debitis
+                        mollitia, commodi voluptates magni esse consectetur fuga dolore.
+                        Consequuntur eaque aut debitis voluptatibus qui magnam recusandae repudiandae earum!</p>
+                </div>
+            </div>
+            <div class="row pt-3">
+                <div class="col-lg-6 text-center m-auto">
+                    <button class="btn1">Ver</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <section class="apple py-5">
+        <div class="container text-white py-5">
+            <div class="row">
+                <div class="col-lg-6">
+                    <h1 class="font-weight-bold py-3">Estas interesado en saber quiénes somos?</h1>
+                    <h6>Servicios de alta calidad a tu mano</h6>
+                    <a class="btn btn-outline-success mt-3" href="/landing">Conoce mas</a>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

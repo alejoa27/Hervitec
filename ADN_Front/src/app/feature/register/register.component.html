@@ -1,0 +1,42 @@
+<div class="cont">
+    <form class="form" [formGroup] = "registerForm">
+        <h2 class="form_tittle">Ingresa los datos</h2>
+        <p class="form_paragraph">¿Quieres registrarte como prestador de servicio? <a href="/registerservicio" class="form__link">Entra aqui</a></p>
+
+        <div class="form__container">
+            <div class="form__group">
+                <input type="text" name="" id="password" class="form__input" placeholder=" " formControlName="nombre">
+                <label for="password" class="form__label"> Nombre:</label>
+                <span class="form__line"></span>
+            </div>
+            <div class="form__group">
+                <input type="text" name="" id="name" class="form__input" placeholder=" " formControlName="apellido">
+                <label for="name" class="form__label"> Apellido:</label>
+                <span class="form__line"></span>
+            </div>
+            <div class="form__group">
+                <input type="text" name="" id="name" class="form__input" placeholder=" " formControlName="email">
+                <label for="name" class="form__label"> Correo:</label>
+                <span class="form__line"></span>
+            </div>
+            <div class="form__group">
+                <input type="password" name="" id="name" class="form__input" placeholder=" " formControlName="password">
+                <label for="name" class="form__label"> Contraseña:</label>
+                <span class="form__line"></span>
+            </div>
+            <div class="form__group">
+                <input type="password" name="" id="name" class="form__input" placeholder=" ">
+                <label for="name" class="form__label"> Repetir Contraseña:</label>
+                <span class="form__line"></span>
+            </div>
+            <div class="form__group">
+                <input type="text" name="" id="name" class="form__input" placeholder=" " formControlName="ciudad">
+                <label for="name" class="form__label"> Ciudad:</label>
+                <span class="form__line"></span>
+            </div>
+            
+
+            <input type="button" class="form__submit" value='Registrarse' (click) = "runRegister()">
+        </div>
+    </form>
+</div>

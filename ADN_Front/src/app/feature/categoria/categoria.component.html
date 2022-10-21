@@ -1,0 +1,40 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+<div class="container">
+        <h1>{{ nombreCategoria }}</h1>
+        <div class="row m-3 " id="TableResult">
+                <table class="table table-sm table-pro">
+                        <thead>
+                                <tr>
+                                        <th>Icono</th>
+                                        <th>Servicio</th>
+                                        <th>Descripcion</th>
+                                </tr>
+                        </thead>
+                        <tbody>
+                                <tr *ngFor="let servicio of servicios">
+                                        <th class="th-icon">
+                                                <img [src]="getIcono(servicio.nombre)" alt="">
+                                        </th>
+                                        <th> {{servicio.nombre}} </th>
+                                        <th> {{servicio.descripcion}}</th>
+                                        <th>
+                                                <div class="product-rating">
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                </div>
+                                        </th>
+                                        <th>
+                                                <button (click)="goToService()" type="button"
+                                                        class="btn btn-primary">Ver</button>
+                                        </th>
+
+                                </tr>
+                        </tbody>
+                </table>
+        </div>
+
+</div>

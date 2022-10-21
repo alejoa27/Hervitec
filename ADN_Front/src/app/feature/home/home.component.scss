@@ -1,0 +1,101 @@
+
+.main{
+    background: url("https://images.pexels.com/photos/7096/people-woman-coffee-meeting.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260")no-repeat;
+    background-size: cover;
+    height: 70%;
+    background-position: 50% 50%;
+    width: 100%;
+}
+
+.pt-5 {
+    background-color: white;
+    border-radius:30px;
+    margin-bottom: 5%;
+}
+
+.main h1{
+    font-size: 4rem;
+    font-weight: 700;
+}
+
+.btn1{
+    height: 45px;
+    width: 35%;
+    border: none;
+    outline: none;
+    background-color: rgb(248, 26, 92);
+    color: white;
+    font-weight: 700;
+    border-radius: 60px;
+    margin: 5%;
+}
+
+.btn1:hover{
+    background-color: rgb(223, 15, 77);
+    transition: 0.5s;
+}
+
+h1{
+    font-weight: 700;
+}
+
+.card:hover{
+    box-shadow: -1px -1px 21px 0px rgba(0,0,0,0.62);
+-webkit-box-shadow: -1px -1px 21px 0px rgba(0,0,0,0.62);
+-moz-box-shadow: -1px -1px 21px 0px rgba(0,0,0,0.62);
+transition: 0.5s;
+}
+
+.apple{
+    background:linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(../../../assets/img/Servicios-empresariales_slide_sector.jpg)no-repeat;
+    background-size: cover;
+    height: 80vh;
+    width: 100%;
+}
+
+.apple h1{
+    font-family: 'Lobster', cursive;
+}
+.search{
+    height: 40px;
+    width: 80%;
+    border-radius: 60px;
+    outline: none;
+    margin-right: -35px;
+    font-family: 'Rubik', sans-serif;
+    border: 2px solid rgb(248, 26, 92);
+}
+.form-search{
+    align-content: right;
+}
+
+.btn{
+    height: 40px;
+    width: 40%;
+    outline: none;
+    border: none;
+    background: rgb(248, 26, 92);
+    color: white;
+    border-radius: 60px;
+    font-weight: 700;
+    margin-right: 1%;
+}
+
+.search_box{
+    margin-bottom: 5%;
+}
+.btn2{
+    height: 40px;
+    width: 40%;
+    outline: none;
+    border: none;
+    background: rgb(29, 160, 61);
+    color: white;
+    border-radius: 60px;
+    font-weight: 700;
+    margin-right: 1%;
+}
+
+.icon{
+    width: 25px;
+}

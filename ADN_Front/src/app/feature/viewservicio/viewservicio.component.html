@@ -1,0 +1,106 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+<div class="cont">
+    <div class=" card-wrapper">
+        <div class="card">
+            <!-- card left -->
+            <div class="product-imgs">
+                <div class="img-display">
+                    <div class="img-showcase">
+                        <img [src]="getIcono(data)" width="500" height="500" alt="">
+                    </div>
+                </div>
+            </div>
+            <!-- card right -->
+            <div class="product-content">
+                <h2 class="product-title">{{data.nombre}}</h2>
+                <!-- <a href="#" class="product-link">visitar tienda</a> -->
+                <div class="product-rating">
+                    <i class="fas fa-star" *ngFor="let item of contStars(); let i = index"></i>
+                    <i class="far fa-star" *ngFor="let item of contNoStars(); let i = index"></i>
+                </div>
+
+                <!-- <div class="product-price">
+                    <p class="last-price">Antes: <span>$257.00</span></p>
+                    <p class="new-price">Ahora: <span>$249.00 (5%)</span></p>
+                </div> -->
+
+                <div class="product-detail">
+                    <h2>Acerca del servicio: </h2>
+                    <p>{{data.descripcion}}</p>
+                    <!--  <ul>
+                        <li>Disponible: <span>De 9:00 am a 5:00 pm</span></li>
+                        <li>Categoria: <span>Mecanicos</span></li>
+                        <li>Area: <span>Pereira, Risaralda</span></li>
+                        <li>Metodo de pago: <span>Efectivo</span></li>
+                    </ul> -->
+                </div>
+
+                <div class="purchase-info">
+                    <button type="button" class="btn" (click)="initChat()">
+                        Solicitar <i class="fas fa-shopping-cart"></i>
+                    </button>
+                </div>
+
+                <!-- <div class="social-links">
+                    <p>Redes: </p>
+                    <a href="#">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="#">
+                        <i class="fab fa-pinterest"></i>
+                    </a>
+                </div> -->
+            </div>
+        </div>
+
+    </div>
+    <div class="card-wrapper2" id="reviews">
+        <div class="container">
+            <div class="row">
+                <div *ngFor="let comentario of comentarios">
+                    <ul>
+                        <li><a href=""><i class="fa fa-user"></i>{{comentario.idCliente_id}}</a></li>
+                        <!-- <li><a href=""><i class="fa fa-clock-o"></i>12:41 PM</a></li> -->
+                        <li>
+                            <div class="product-rating">
+                                <i class="fas fa-star"
+                                    *ngFor="let item of contStarsElement(comentario); let i = index"></i>
+                                <i class="far fa-star"
+                                    *ngFor="let item of contNoStarsElement(comentario); let i = index"></i>
+                            </div>
+                        </li>
+                        <p>{{comentario.mensaje}}</p>
+                    </ul>
+                </div>
+                <br><br>
+            </div>
+            <div class="row">
+                <form [formGroup]="commentForm">
+                    <p><b>Dejanos tu comentario</b></p>
+                    <textarea formControlName="mensaje" name=""></textarea>
+                    <p>Estrellas:
+                    <ul class="list-inline rating-list" *ngFor="let star of stars" style="display: inline-plock">
+                        <li (click)="countStar(star)" [ngClass]="{'selected': (star <= selectedValue)}">
+                            <i class="fas fa-star"></i>
+                        </li>
+                    </ul>
+                    <div class="">
+                        <input type="button" value="Enviar" (click)="sendComents()" class="btn2">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>
